@@ -4,38 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <title>Weather</title>
 </head>
 <body>
     <div class="content">
         <div class="top">
             <div class="left">
-                <div>
-                    <h1 class="Weather">Weather</h1></div>
-                    <div class="about">
-                <div><h4 class="Location">Location</h4></div>
-                <div><h5 class="date">Date</h5></div>
-                    </div>
-                    <div class="tempWeather">
-                <div><h1 class="temp">Temp</h1></div>
-                <!-- <div>weather pic</div> -->
-                    </div>
+                 <div> 
+                    <h1 class="Weather"></h1>
+                </div>
+                <div class="about">
+                <div><h4 class="Location"></h4></div>
+                <div><h5 class="date"></h5></div>
+                </div>
+                <div class="tempWeather">
+                <div><h1 class="temp"></h1>
+                </div>
+
+                </div>
                 <div>
                 <form class="form">
                     <label for="search"></label>
                     <input type="text" name="search" id="search">
-                    <button type="submit">Submit</button>
+                    <button class="submitsvg" type="submit"><img class="formsvg"src="./images/search.svg" alt=""></button>
                 </form>
                 </div>
             </div>
             <div class="right">
-                <div><h3 class="feels">Feels like</h3></div>
-                <div ><h3 class="humidity">humidity</h3></div>
-                <div><h3 class="visibility">visibility</h3></div>
-                <div><h3 class="wind">Wind</h3></div>
+                <div class="svg">
+                    <img class="svgpic" src="./images/feelslike.svg" alt="">
+                <div class="feeslike">
+                    <h5>Feels like</h5>
+                    <h2 class="feels"></h2>
+                </div>
+                </div>
+                <div class="svg">
+                    <img class="svgpic" src="./images/humidity2.svg" alt="">
+                <div class="humid">
+                    <h5>Humidity</h5>
+                    <h2 class="humidity"></h2>
+                </div>
+                </div>
+                <div class="svg">
+                    <img class="svgpic" src="./images/vis.svg" alt="">
+                <div class="Vis">
+                    <h5>Visibility</h5>
+                    <h2 class="visibility"></h2>
+                </div>
+                </div>
+                <div class="svg">
+                    <img class="svgpic" src="./images/wind.svg" alt="">
+                <div class="windSpeed">
+                    <h5>Wind Speed</h5>
+                    <h2 class="wind"></h2>
+                </div>
+                </div>
             </div>
         </div>
         <div class="bottom">
+              <!-- <div class="container">
+                <div class="date2">Tuesday</div>
+                <div class="maxtemp">81</div>
+                <div class="mintemp">81</div>
+                <div>weatherpic</div> -->
         </div>
     </div>
     <script src="main.js"></script>

@@ -1,8 +1,15 @@
+body {
+    background-image: url("./images/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
 .content{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100vh;
+    color: whitesmoke;
 
 }
 
@@ -10,26 +17,40 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-
-   
+    font-family: 'Jost',sans-serif;
 }
 .left{
     display: flex;
     flex-direction: column;
-    /* gap: 4px;  */
     margin-left: 50px;
+    
 }
-.right{
-    margin-right: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
 
+.right{
+    margin-right: 75px;
+    margin-top: -30px; 
+}
+.svg > div{
+     margin-bottom:26px; 
+}
+ .svg >div > *{
+    margin-bottom: -16px;
+} 
+.svg{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.svgpic{
+    height: 36px;
+    width: 36px;
+    fill: whitesmoke;
 }
 
 .bottom {
     display: grid;
     grid-template-columns: repeat(7,1fr);
+    margin-right: 24px;
 }
 
 .container{
@@ -41,7 +62,32 @@
 }
 
 .tempWeather{
-     display: flex;
-
+    /* display: flex; */
     margin-bottom: 16px;
 }
+
+.maxtemp{
+    font-weight: 600;
+
+}
+.mintemp{
+    font-size: 16px;
+}
+.date2{
+    font-size: 24px;
+}
+.form{
+    display: flex;
+}
+.formsvg{
+    height: 20px;
+    width: 15px;
+    /* background-color: aliceblue; */
+}
+.submitsvg{
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+   position:absolute;
+   left: 180px;
+} 

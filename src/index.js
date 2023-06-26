@@ -56,34 +56,30 @@ form.addEventListener('submit',function(e){
 
 
 function createObj(data){
+
     const sentence = data.location.localtime;
     const date = sentence.split(' ');
     const icon =`https:${data.current.condition.icon}`;
-    console.log(icon);
+
     const newobj = new WeatherObj(data.current.temp_f,data.current.temp_c,data.current.condition.text,data.location.name,data.location.region,
         data.location.country,data.current.feelslike_c,data.current.feelslike_f,data.current.humidity,data.current.wind_mph,data.current.wind_kph,
         data.current.vis_miles,data.current.vis_km,date[0],icon);
-   console.log(newobj.pic);
 
     for(let i=1;i<data.forecast.forecastday.length;i++) {
+
        const properDate= daycreater(data.forecast.forecastday[i].date);
        const weekIcon = 'https:' + data.forecast.forecastday[i].day.condition.icon;
-       console.log(weekIcon);
-        const weekforecast = new ForecastObj(data.forecast.forecastday[i].day.maxtemp_c, data.forecast.forecastday[i].day.maxtemp_f,
-            data.forecast.forecastday[i].day.mintemp_c, data.forecast.forecastday[i].day.mintemp_f,data.forecast.forecastday[i].day.condition.text, properDate,weekIcon);
+       const weekforecast = new ForecastObj(data.forecast.forecastday[i].day.maxtemp_c, data.forecast.forecastday[i].day.maxtemp_f,
+        data.forecast.forecastday[i].day.mintemp_c, data.forecast.forecastday[i].day.mintemp_f,data.forecast.forecastday[i].day.condition.text, properDate,weekIcon);
         newobj.pushSevenday(weekforecast);
-       // console.log(weekforecast);
     }
-    newobj._sevenDay.forEach(element => {
-        //console.log(element);
-    });
-    //let newobjj = newobj;
+
     domManip(newobj);
     forecastDomManip(newobj);
 }
 
 function domManip(newobj){
-   // console.log(newobj._Currenttemp_f);
+
     const leftWeather = document.querySelector('.Weather');
     const leftLocation = document.querySelector('.Location');
     const leftDate = document.querySelector('.date');
@@ -96,44 +92,40 @@ function domManip(newobj){
     const rightvis = document.querySelector('.visibility');
     const rightWind = document.querySelector('.wind');
     const img = document.createElement('img');
-    console.log(newobj.pic);
     img.src = newobj.pic;
     leftTempWeather.append(img);
 
-    //constructor(Currenttemp_f, Currenttemp_c, CurrentCondition, LocationName, 
-    //LocationRegion, LocationCountry, feelslike_c, feelslike_f, humidity, 
-    //wind_mph, wind_kph, vis_miles, vis_km,date) {
+    const todaysDay = daycreater(newobj.date);
+
     leftWeather.textContent= newobj.CurrentCondition;
     leftLocation.textContent= `${newobj.LocationName}, ${newobj.LocationRegion}, ${newobj.LocationCountry}`;
-    leftDate.textContent= newobj.date;
-    leftTemp.textContent= newobj.Currenttemp_f;
-    rightFeels.textContent= newobj.feelslike_f
-    rightHumidity.textContent= newobj.humidity;
-    rightvis.textContent= newobj.vis_miles;
-    rightWind.textContent= newobj.wind_mph;
+    leftDate.textContent= `${newobj.date}, ${todaysDay}`;
+    leftTemp.textContent= `${Math.round(newobj.Currenttemp_f)} \u00B0F `;
+    rightFeels.textContent= `${Math.round(newobj.feelslike_f)} \u00B0F`; 
+    rightHumidity.textContent= `${newobj.humidity}%`;
+    rightvis.textContent= `${newobj.vis_miles} mi`;
+    rightWind.textContent= `${newobj.wind_mph} mph`;
 }
 
 function forecastDomManip(newobj){
 
     const bottom = document.querySelector('.bottom');
     bottom.replaceChildren();
-    // const container= document.createElement('div');
-    // container.classList.add('container');
-    // bottom.append(container);
 
-    // constructor(maxtemp_c,maxtemp_f,mintemp_c,mintemp_f,condition,date){
     newobj._sevenDay.forEach(element => {
         const container= document.createElement('div');
         container.classList.add('container');
         bottom.append(container);
 
         const date = document.createElement('div');
+        date.classList.add('date2');
         date.textContent=element.date;
-    //    console.log(element.maxtemp_f);
         const maxtempf = document.createElement('div');
-        maxtempf.textContent=element.maxtemp_f;
+        maxtempf.classList.add('maxtemp');
+        maxtempf.textContent=`${Math.round(element.maxtemp_f)} \u00B0F `;
         const mintempf = document.createElement('div');
-        mintempf.textContent=element.mintemp_f;
+        mintempf.classList.add('mintemp');
+        mintempf.textContent=`${Math.round(element.mintemp_f)} \u00B0F`;
         const weatherPicBottom = document.createElement('img');
         weatherPicBottom.src=element.pic;
 
