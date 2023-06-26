@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hs0774/WeatherApp#readme",
   "dependencies": {
+    "date-fns": "^2.30.0",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4"
   }

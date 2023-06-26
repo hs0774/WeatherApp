@@ -1,11 +1,12 @@
 export class ForecastObj {
-    constructor(maxtemp_c,maxtemp_f,mintemp_c,mintemp_f,condition,date){
+    constructor(maxtemp_c,maxtemp_f,mintemp_c,mintemp_f,condition,date,pic){
         this._maxtemp_c=maxtemp_c;
         this._maxtemp_f=maxtemp_f;
         this._mintemp_c=mintemp_c;
         this._mintemp_f=mintemp_f;
         this._condition=condition;
         this._date=date;
+        this._pic=pic;
     }
 
     //getters
@@ -27,6 +28,9 @@ export class ForecastObj {
     get date() {
         return this._date;
       }
+      get pic() {
+        return this._pic;
+      }
 
     //setters
     set maxtemp_c(temp){
@@ -46,6 +50,9 @@ export class ForecastObj {
     }
     set date(newDate) {
         this._date = newDate;
+      }
+    set pic(newPic) {
+        this._pic = newPic;
       }
 
 }

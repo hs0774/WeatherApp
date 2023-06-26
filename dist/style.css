@@ -3,19 +3,28 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100vh;
+
 }
 
 .top{
     display: flex;
     justify-content:space-between;
     align-items: center;
+
    
 }
 .left{
+    display: flex;
+    flex-direction: column;
+    /* gap: 4px;  */
     margin-left: 50px;
 }
 .right{
     margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
 }
 
 .bottom {
@@ -28,4 +37,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 22px;
+}
+
+.tempWeather{
+     display: flex;
+
+    margin-bottom: 16px;
 }
