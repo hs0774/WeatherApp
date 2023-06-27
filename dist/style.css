@@ -33,7 +33,7 @@ body {
 .svg > div{
      margin-bottom:26px; 
 }
- .svg >div > *{
+.svg >div > *{
     margin-bottom: -16px;
 } 
 .svg{
@@ -82,12 +82,22 @@ body {
 .formsvg{
     height: 20px;
     width: 15px;
-    /* background-color: aliceblue; */
 }
 .submitsvg{
    border: none;
    background-color: transparent;
    cursor: pointer;
-   position:absolute;
+   /* position:absolute;
    left: 180px;
+   margin-bottom: 50px; */
 } 
+
+#search{
+    border: none;
+    border-bottom: 1px whitesmoke solid;
+    background-color: transparent;
+    color: whitesmoke;
+}
+.hidden{
+    display: none;
+}

@@ -1,5 +1,5 @@
 export class WeatherObj {
-    constructor(Currenttemp_f, Currenttemp_c, CurrentCondition, LocationName, LocationRegion, LocationCountry, feelslike_c, feelslike_f, humidity, wind_mph, wind_kph, vis_miles, vis_km,date,pic) {
+    constructor(Currenttemp_f, Currenttemp_c, CurrentCondition, LocationName, LocationRegion, LocationCountry, feelslike_c, feelslike_f, humidity, wind_mph, wind_kph, vis_miles, vis_km,date,pic,today) {
         this._Currenttemp_f = Currenttemp_f;
         this._Currenttemp_c = Currenttemp_c;
         this._CurrentCondition = CurrentCondition;
@@ -15,6 +15,7 @@ export class WeatherObj {
         this._vis_km = vis_km;
         this._date=date;
         this._pic=pic;
+        this._today=today;
         this._sevenDay =[]; 
       }
 
@@ -76,6 +77,9 @@ export class WeatherObj {
       get pic() {
         return this._pic;
       }
+      get today(){
+        return this._today;
+      }
     
       // Setters
       set Currenttemp_f(temp) {
@@ -134,6 +138,9 @@ export class WeatherObj {
       }
       set pic(newPic) {
         this._pic = newPic;
+      }
+      set today(newDay){
+        this._today=newDay;
       }
 
     pushSevenday(item){
